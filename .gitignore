@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Project specifics
+.env
+.python-version
+uv.lock
+# uv.lock is sometimes committed, but since this is a fresh repo, we'll keep it or ignore it. 
+# Usually in ADK projects uv.lock is committed. I'll remove it from ignore.
+
+# Sensitive information
+*.json
+*.key
+*.pem
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and Dist
+dist/
+build/
+*.egg-info/
+
+# ADK specifics
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
