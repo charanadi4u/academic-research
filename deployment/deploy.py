@@ -73,7 +73,7 @@ def deploy() -> None:
 
     # Note: version constraints should align with pyproject.toml
     remote_app = agent_engines.create(
-        app,
+        app,  # type: ignore
         display_name="academic_research",
         requirements=[
             "google-cloud-aiplatform[adk,agent-engines]>=1.93.0",

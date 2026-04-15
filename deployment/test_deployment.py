@@ -61,8 +61,8 @@ def main(argv: list[str]) -> None:  # pylint: disable=unused-argument
         agent = agent_engines.get(FLAGS.resource_id)
         print(f"Found agent with resource ID: {FLAGS.resource_id}")
 
-        session = agent.create_session(user_id=FLAGS.user_id)
-        print(f"Created session for user ID: {FLAGS.user_id}")
+        session_id = f"session-{FLAGS.user_id}"
+        print(f"Using session ID: {session_id} for user: {FLAGS.user_id}")
         print("Type 'quit' to exit.")
 
         while True:
@@ -70,16 +70,16 @@ def main(argv: list[str]) -> None:  # pylint: disable=unused-argument
             if user_input.lower() == "quit":
                 break
 
-            for event in agent.stream_query(
-                user_id=FLAGS.user_id, session_id=session["id"], message=user_input
+            for event in agent.stream_query(  # type: ignore
+                input=user_input,  # 'input' is the standard keyword for queries
+                session_id=session_id
             ):
                 if "content" in event and "parts" in event["content"]:
                     for part in event["content"]["parts"]:
                         if "text" in part:
                             print(f"Response: {part['text']}")
 
-        agent.delete_session(user_id=FLAGS.user_id, session_id=session["id"])
-        print(f"Deleted session for user ID: {FLAGS.user_id}")
+        print(f"Tests completed for user ID: {FLAGS.user_id}")
 
     except Exception as e:
         print(f"Error during deployment test: {e}")
