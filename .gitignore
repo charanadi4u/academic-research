@@ -12,9 +12,6 @@ env/
 # Project specifics
 .env
 .python-version
-uv.lock
-# uv.lock is sometimes committed, but since this is a fresh repo, we'll keep it or ignore it. 
-# Usually in ADK projects uv.lock is committed. I'll remove it from ignore.
 
 # Sensitive information
 *.json
