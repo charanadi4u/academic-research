@@ -21,9 +21,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-_, project_id = google.auth.default()
-os.environ.setdefault("GOOGLE_CLOUD_PROJECT", project_id)
-os.environ.setdefault("GOOGLE_CLOUD_LOCATION", "global")
+_, default_project_id = google.auth.default()
+project_id = os.getenv("GOOGLE_CLOUD_PROJECT") or default_project_id
+if project_id:
+    os.environ["GOOGLE_CLOUD_PROJECT"] = project_id
+os.environ.setdefault("GOOGLE_CLOUD_LOCATION", "us-central1")
 os.environ.setdefault("GOOGLE_GENAI_USE_VERTEXAI", "True")
 
 from . import agent as agent  # noqa: E402

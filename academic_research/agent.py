@@ -35,7 +35,6 @@ academic_coordinator = LlmAgent(
         "to acquire knowledge"
     ),
     instruction=prompt.ACADEMIC_COORDINATOR_PROMPT,
-    output_key="seminal_paper",
     tools=[
         AgentTool(agent=academic_websearch_agent),
         AgentTool(agent=academic_newresearch_agent),

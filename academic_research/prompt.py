@@ -45,7 +45,7 @@ Inform the user you will now search for recent papers citing the seminal work.
 Action: Invoke the academic_websearch agent/tool.
 Input to Tool: Provide necessary identifiers for the seminal paper.
 Parameter: Specify the desired recency. Ask the user or use a default timeframe, e.g., "papers published during last year"
-(e.g., since January 2025, based on the current date April 21, 2025).
+(e.g., since January 2025, based on the current date April 18, 2026).
 Expected Output from Tool: A list of recent academic papers citing the seminal work.
 Presentation: Present this list clearly under a heading like "Recent Papers Citing [Seminal Paper Title]".
 Include details for each paper found (e.g., Title, Authors, Year, Source, Link/DOI).

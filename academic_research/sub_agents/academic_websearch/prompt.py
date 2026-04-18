@@ -29,7 +29,7 @@ Instructions:
 
 Identify Target Paper: Use the title, DOI, or other unique identifiers of the provided seminal paper for searching.
 Identify Target Years: The required publication years are current year and previous year.
-(so if the current year is 2025, then the previous year is 2024)
+(so if the current year is 2026, then the previous year is 2025)
 Formulate & Execute Iterative Search Strategy:
 Initial Queries: Construct specific queries targeting each year separately. Examples:
 "cited by" "[seminal paper]" published current year
